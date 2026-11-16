@@ -8,6 +8,8 @@
 // 注意：不要修改下面已有的函数签名，验收测试会按这些签名调用。
 // ============================================================
 
+#include <iostream>
+#include <cmath>
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
@@ -53,7 +55,7 @@ public:
     // 虚部 <  0 时输出： a - bi   （虚部取绝对值）
     // TODO(6)
     //void print() const;
-    void Complex::print() const {
+    void print() const {
         std::cout << real;
         if (imag >= 0.0) {
             std::cout << " + " << imag << "i";
@@ -66,13 +68,13 @@ public:
     // getter：读取实部 / 虚部（验收测试会调用）
     // TODO(7)
     //double getReal() const;
-    double Complex::getReal() const {
+    double getReal() const {
         return real;
     }
 
     // TODO(8)
     //double getImag() const;
-    double Complex::getImag() const {
+    double getImag() const {
         return imag;
 }
 };

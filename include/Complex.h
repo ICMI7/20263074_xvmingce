@@ -37,7 +37,7 @@ public:
     //Complex operator+(const Complex& other) const;
     Complex Complex::operator+(const Complex& other) const
  {
-    return Complex(real_ + other.real_, imag_ + other.imag_);
+    return Complex(real + other.real, imag + other.imag);
 }
 
     // 运算符重载：复数减法
@@ -45,20 +45,36 @@ public:
     //Complex operator-(const Complex& other) const;
     Complex Complex::operator-(const Complex& other) const
  {
-    return Complex(real_ - other.real_, imag_ - other.imag_);
+    return Complex(real - other.real, imag - other.imag);
 }
 
     // 打印复数
     // 虚部 >= 0 时输出： a + bi
     // 虚部 <  0 时输出： a - bi   （虚部取绝对值）
     // TODO(6)
-    void print() const;
+    //void print() const;
+    void Complex::print() const {
+        std::cout << real;
+        if (imag >= 0.0) {
+            std::cout << " + " << imag << "i";
+        } else {
+            std::cout << " - " << std::fabs(imag) << "i";
+        }
+    }
+
 
     // getter：读取实部 / 虚部（验收测试会调用）
     // TODO(7)
-    double getReal() const;
+    //double getReal() const;
+    double Complex::getReal() const {
+        return real;
+    }
+
     // TODO(8)
-    double getImag() const;
+    //double getImag() const;
+    double Complex::getImag() const {
+        return imag;
+}
 };
 
 #endif  // COMPLEX_H

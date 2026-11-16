@@ -23,60 +23,42 @@ public:
     // 构造函数
     // 支持三种写法：Complex z;  Complex z(3);  Complex z(3, 4);
     // TODO(2): 实现时请使用初始化列表
-    Complex(double r, double i) : real(r), imag(i) {
-}
+    Complex(double r, double i) : real(r), imag(i);
     //Complex(double r = 0.0, double i = 0.0);
 
     // 析构函数
     // TODO(3): 实现析构函数
-    ~Complex() {
-}
+    ~Complex();
     //~Complex();
 
     // 运算符重载：复数加法
     // TODO(4): 返回新的 Complex(real + other.real, imag + other.imag)
     //          要求 const：不能修改 a 和 b 本身
     //Complex operator+(const Complex& other) const;
-    Complex operator+(const Complex& other) const
- {
-    return Complex(real + other.real, imag + other.imag);
-}
+    Complex operator+(const Complex& other) const;
+ 
 
     // 运算符重载：复数减法
     // TODO(5)
     //Complex operator-(const Complex& other) const;
-    Complex operator-(const Complex& other) const
- {
-    return Complex(real - other.real, imag - other.imag);
-}
+    Complex operator-(const Complex& other) const;
+ 
 
     // 打印复数
     // 虚部 >= 0 时输出： a + bi
     // 虚部 <  0 时输出： a - bi   （虚部取绝对值）
     // TODO(6)
     //void print() const;
-    void print() const {
-        std::cout << real;
-        if (imag >= 0.0) {
-            std::cout << " + " << imag << "i";
-        } else {
-            std::cout << " - " << std::fabs(imag) << "i";
-        }
-    }
-
+    void print() const;
 
     // getter：读取实部 / 虚部（验收测试会调用）
     // TODO(7)
     //double getReal() const;
-    double getReal() const {
-        return real;
-    }
+    double getReal() const;
 
     // TODO(8)
     //double getImag() const;
-    double getImag() const {
-        return imag;
-}
+    double getImag() const;
 };
 
 #endif  // COMPLEX_H

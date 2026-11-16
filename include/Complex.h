@@ -60,7 +60,7 @@ public:
         if (imag >= 0.0) {
             std::cout << " + " << imag << "i";
         } else {
-            std::cout << " - " << std::labs(imag) << "i";
+            std::cout << " - " << std::fabs(imag) << "i";
         }
     }
 

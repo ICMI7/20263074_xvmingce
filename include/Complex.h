@@ -21,13 +21,13 @@ public:
     // 构造函数
     // 支持三种写法：Complex z;  Complex z(3);  Complex z(3, 4);
     // TODO(2): 实现时请使用初始化列表
-    Complex::Complex(double r, double i) : real(r), imag(i) {
+    Complex(double r, double i) : real(r), imag(i) {
 }
     //Complex(double r = 0.0, double i = 0.0);
 
     // 析构函数
     // TODO(3): 实现析构函数
-    Complex::~Complex() {
+    ~Complex() {
 }
     //~Complex();
 
@@ -35,7 +35,7 @@ public:
     // TODO(4): 返回新的 Complex(real + other.real, imag + other.imag)
     //          要求 const：不能修改 a 和 b 本身
     //Complex operator+(const Complex& other) const;
-    Complex Complex::operator+(const Complex& other) const
+    Complex operator+(const Complex& other) const
  {
     return Complex(real + other.real, imag + other.imag);
 }
@@ -43,7 +43,7 @@ public:
     // 运算符重载：复数减法
     // TODO(5)
     //Complex operator-(const Complex& other) const;
-    Complex Complex::operator-(const Complex& other) const
+    Complex operator-(const Complex& other) const
  {
     return Complex(real - other.real, imag - other.imag);
 }

@@ -14,27 +14,39 @@
 class Complex {
 private:
     // TODO(1): 在这里声明复数的数据成员（至少 2 个 double）
-    // 提示：double real;  实部
-    //       double imag;  虚部
+    double real;  实部
+    double imag;  虚部
 
 public:
     // 构造函数
     // 支持三种写法：Complex z;  Complex z(3);  Complex z(3, 4);
     // TODO(2): 实现时请使用初始化列表
-    Complex(double r = 0.0, double i = 0.0);
+    Complex::Complex(double r, double i) : real(r), imag(i) {
+}
+    //Complex(double r = 0.0, double i = 0.0);
 
     // 析构函数
     // TODO(3): 实现析构函数
-    ~Complex();
+    Complex::~Complex() {
+}
+    //~Complex();
 
     // 运算符重载：复数加法
     // TODO(4): 返回新的 Complex(real + other.real, imag + other.imag)
     //          要求 const：不能修改 a 和 b 本身
-    Complex operator+(const Complex& other) const;
+    //Complex operator+(const Complex& other) const;
+    Complex Complex::operator+(const Complex& other) const
+ {
+    return Complex(real_ + other.real_, imag_ + other.imag_);
+}
 
     // 运算符重载：复数减法
     // TODO(5)
-    Complex operator-(const Complex& other) const;
+    //Complex operator-(const Complex& other) const;
+    Complex Complex::operator-(const Complex& other) const
+ {
+    return Complex(real_ - other.real_, imag_ - other.imag_);
+}
 
     // 打印复数
     // 虚部 >= 0 时输出： a + bi
